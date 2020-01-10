@@ -2,11 +2,13 @@
 This is a repository for the code for a MQTT swift (macOS) controlled robot
 
 There is a swift project that uses CocoaMQTT - Robot
+
 On the MAC I have created a Mosquitto server which is what everything talks to
 
-There are currently two Raspberry Pi's for the disributed part.
+There are currently two Raspberry Pi's for the distributed part.
 
 A Pi Zero named Lidar controls a servo with a VL53LOX lidar mounted on it.
+
 This on receipt of a MQTT command does a 180 degree scan at 5 degree intervals and sends the data back to the MQTT server.
 
 A second Pi (Video) has a camera mounted on it. This on command takes a 640 * 480 image and sends it back to the MQTT Server 
@@ -19,7 +21,7 @@ Via timers it sends a Lidar scan command every two seconds.
 
 Currently a seperate button initiates the camera grab. Once pushed, it sends the camaer a command to grab an image.
 
-The receive events in the swit program work as follows;
+The MQTT receive events in the swift program work as follows;
 
 For the camera data, it displays the image and sends a request back to the camera for another image.
 
